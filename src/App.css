@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
+  font-family: cursive;
+  overflow-x: hidden;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+  width: 100vw;
+  height: 120vh;
+  background-color: rgb(230, 228, 228);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  font-size: 1.5rem;
+  margin-top:2rem;
+  width: 70%;
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
+  color: gray;
+}
+h2 {
+  margin: 1rem;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30rem;
+  margin-bottom: 2rem;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-btn,
+.add-tranaction-btn {
+  all: unset;
+  border: 1px solid gray;
+  padding: 0.4rem 1rem;
+  border-radius: 3rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  cursor: pointer;
+}
+.add-btn:hover {
+  background-color: gray;
+  color: #fff;
+}
+.add-btn:active {
+  border: 1px solid #fff;
+}
+section,
+.section2 {
+  width: 36rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.expense,
+.income {
+  width: 15rem;
+  height: 8rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 2rem;
+  color: #000;
+}
+.expense-money {
+  color: red;
+}
+.income-money {
+  color: green;
+}
+.section2 {
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.section2-title {
+  width: 100%;
+  font-size: 1.8rem;
+  color: rgb(63, 63, 63);
+}
+.search-input {
+  all: unset;
+  width: 100%;
+  height: 3rem;
+  padding: 0.6rem;
+  background-color: #fff;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+.lists {
+  width: 100%;
+  height:20rem;
+  margin-top: 2rem;
+  height: 20rem;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+.lists::-webkit-scrollbar {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.item {
+  width: 98%;
+  height: 4rem;
+  border: 1px solid gray;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-income{
+  display: flex;
+  border-right: 4px solid green;
+}
+.item-expense{
+  display: flex;
+  border-right: 4px solid red;
+}
+.add-tranasaction {
+  border: 1px solid rgb(189, 189, 189);
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.add-tranasaction input[type='text'],
+.add-tranasaction input[type='number'] {
+  all: unset;
+  background-color: #fff;
+  width: 90%;
+  height: 3rem;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+}
+.add-tranasaction input[type='radio'] {
+  margin: 1rem;
+}
+.add-tranasaction span {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
