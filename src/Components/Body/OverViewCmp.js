@@ -1,22 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import TransActionForm from './transActionForm/TransActionForm'
 
-const OverViewCmp = ({ expense, income ,addTransaction}) => {
+const OverViewCmp = ({body , expense, income, addTransaction }) => {
   const [state, setState] = useState(false)
+
   return (
-    <>
-    {state ? <TransActionForm addTransaction={addTransaction} setState={setState}/> : ''}
+    <div className='sectionFirst'>
+      { state || body ?
+        <TransActionForm addTransaction={addTransaction} setState={setState} />
+        : '' }
       <section className="header">
         <p>Balance : {income - expense} $</p>
-        <button 
-        className="add-btn" 
-        onClick={() => setState(!state)}
-        style={{
-          backgroundColor:`${ state ? '#ec4899' : '#65a30d'}`,
-          color:'#fff'
-        }}>
-         {state ? 'Cancel' : 'Add'}
-        </button>
+        { !body ? (
+          <button
+            className={`${state ? 'add-btn_cancel' : 'add-btn_add'}`}
+            onClick={() => setState(!state)}
+          >
+            {state ? 'Cancel' : 'Add'}
+          </button>
+        ) : (
+          ''
+        )}
       </section>
       <section>
         <div className="expense">
@@ -28,7 +32,7 @@ const OverViewCmp = ({ expense, income ,addTransaction}) => {
           <p className="income-money">{income} $</p>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

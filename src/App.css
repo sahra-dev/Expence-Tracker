@@ -7,38 +7,48 @@
   margin: 0;
   box-sizing: border-box;
 }
+:root{
+  --bg-color : #e6e4e4;
+  --main-gray : gray ;
+  --main-white : #fff ;
+  --main-black : #000 ;
+  --main-red : red ;
+  --main-green : green ;
+
+}
 html {
   font-size: 62.5%;
-  font-family: cursive , 'Baloo';
+  font-family: 'Baloo';
   overflow-x: hidden;
 }
 #root {
   width: 100vw;
-  height: 120vh;
-  background-color: rgb(230, 228, 228);
+  height: 100vh;
+  background-color: var(--bg-color);
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: flex-start;
+
 }
 .app {
-  font-size: 1.5rem;
   margin-top:2rem;
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  color: gray;
+  color: var(--main-gray);
+  font-size: 1.5rem;
 }
 h2 {
   margin: 1rem;
+  font-size: 2.5rem;
 }
 header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 30rem;
+  width: 100%;
   margin-bottom: 2rem;
 }
 .header {
@@ -47,10 +57,10 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.add-btn,
+.add-btn_add,
+.add-btn_cancel,
 .add-tranaction-btn {
   all: unset;
-  border: 1px solid gray;
   padding: 0.4rem 1rem;
   border-radius: 3rem;
   display: flex;
@@ -58,12 +68,32 @@ header {
   align-items: center;
   cursor: pointer;
 }
-.add-btn:hover {
-  background-color: gray;
-  color: #fff;
+.add-btn_add{
+  border: 2px solid var(--main-green);
+  color: var(--main-green)
 }
-.add-btn:active {
-  border: 1px solid #fff;
+.add-btn_add:hover{
+  background-color: var(--main-green);
+  color: var(--main-white);
+  border: 2px solid var(--bg-color);
+}
+.add-btn_cancel{
+  border: 2px solid var(--main-red);
+  color: var(--main-red)
+}
+.add-btn_cancel:hover{
+  background-color: var(--main-red);
+  color: var(--main-white);
+  border: 2px solid var(--bg-color);
+}
+.add-tranaction-btn{
+  border: 2px solid var(--main-green);
+  color: var(--main-green);
+}
+.add-tranaction-btn:hover{
+  border: 2px solid var(--bg-color);
+  background-color: var(--main-green);
+  color: var(--main-white);
 }
 section,
 .section2 {
@@ -82,41 +112,46 @@ section,
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid gray;
+  border: 1px solid var(--main-gray);
   border-radius: 2rem;
-  color: #000;
+  color: var(--main-black);
 }
 .expense-money {
-  color: red;
+  color: var(--main-red);
 }
 .income-money {
-  color: green;
+  color: var(--main-green);
 }
 .section2 {
   flex-direction: column;
   margin-top: 2rem;
+  justify-content: flex-start;
+}
+.section2 h4{
+  margin-top: 3rem;
 }
 .section2-title {
   width: 100%;
   font-size: 1.8rem;
-  color: rgb(63, 63, 63);
+  color: var(--main-gray);
+  text-shadow: 1px 1px 3px var(--main-white);
+  font-weight: bold;
 }
 .search-input {
   all: unset;
   width: 100%;
   height: 3rem;
   padding: 0.6rem;
-  background-color: #fff;
+  background-color: var(--main-white);
   margin-top: 1rem;
   border-radius: 1rem;
 }
 .lists {
   width: 100%;
-  height:20rem;
+  height:35rem;
   margin-top: 2rem;
-  height: 20rem;
   overflow-y: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .lists::-webkit-scrollbar {
@@ -126,7 +161,7 @@ section,
 .item {
   width: 98%;
   height: 4rem;
-  border: 1px solid gray;
+  border: 1px solid var(--main-gray);
   padding: 1rem;
   border-radius: 0.4rem;
   margin: 0.5rem;
@@ -134,16 +169,32 @@ section,
   justify-content: space-between;
   align-items: center;
 }
+.item .item-desc{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .item-income{
   display: flex;
-  border-right: 4px solid green;
+  border-right: 4px solid var(--main-green);
 }
 .item-expense{
   display: flex;
-  border-right: 4px solid red;
+  border-right: 4px solid var(--main-red);
+}
+.trash-icon{
+  font-size: 2.2rem;
+  transform: translateY(0.3rem);
+  color: var(--main-gray);
+  cursor: pointer;
+}
+.trash-icon:hover{
+  color: var(--main-red);
 }
 .add-tranasaction {
-  border: 1px solid rgb(189, 189, 189);
+  border: 1px solid var(--main-gray);
+  border-radius: 1rem;
   width: 100%;
   height: 15rem;
   display: flex;
@@ -156,7 +207,7 @@ section,
 .add-tranasaction input[type='text'],
 .add-tranasaction input[type='number'] {
   all: unset;
-  background-color: #fff;
+  background-color: var(--main-white);
   width: 90%;
   height: 3rem;
   padding: 0.4rem 1rem;
@@ -170,4 +221,91 @@ section,
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.bodyWith900Up{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.bodyWith900Down{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sectionFirst{
+  display: flex;
+  flex-direction: column;
+}
+/* input radio */
+.check-boxes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-control {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type='radio'] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--bg-color);
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-control.red input{
+  border: 0.15em solid var(--main-red);
+}
+.form-control.green input{
+  border: 0.15em solid var(--main-green);
+}
+input[type='radio']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.5s transform ease-in-out;
+}
+.form-control.red input::before{
+  box-shadow: inset 1em 1em var(--main-red);
+  background-color: var(--main-red);
+}
+.form-control.green input::before{
+  background-color:  var(--main-green);
+  box-shadow: inset 1em 1em var(--main-green);
+}
+input[type='radio']:checked::before {
+  transform: scale(1);
+}
+
+@media screen and (max-width : 450px) {
+  .app{
+    font-size: 1.3rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  section,
+.section2 {
+  width: 30rem;
+}
+  .expense,
+.income {
+  width: 12rem;
+  height: 6rem;
+}
+.add-tranasaction input[type='radio'] {
+  margin-right: 0.5rem;
+}
+.section2-title {
+  font-size: 1.5rem;
+}
 }

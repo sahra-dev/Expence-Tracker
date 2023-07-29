@@ -36,7 +36,7 @@ const TransActionForm = ({addTransaction , setState}) => {
       />
       <span>
         <div className="check-boxes">
-          <label>
+          <label className="form-control red">
             <input
               type="radio"
               name="type"
@@ -46,7 +46,7 @@ const TransActionForm = ({addTransaction , setState}) => {
             />
             Expense
           </label>
-          <label>
+          <label className="form-control green">
             <input
               type="radio"
               name="type"
@@ -57,7 +57,7 @@ const TransActionForm = ({addTransaction , setState}) => {
             Income
           </label>
         </div>
-        <button type="submit" className="add-tranaction-btn" >Add</button>
+        <button type="submit" className="add-tranaction-btn" >Add TransAction</button>
       </span>
     </form>
   )
