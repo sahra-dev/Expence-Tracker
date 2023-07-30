@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import TransActionForm from './transActionForm/TransActionForm'
 
-const OverViewCmp = ({body , expense, income, addTransaction }) => {
+const OverViewCmp = ({body , expense, income, addTransaction , transAction }) => {
   const [state, setState] = useState(false)
 
   return (

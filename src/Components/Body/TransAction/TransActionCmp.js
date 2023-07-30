@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
-import {BiTrashAlt} from 'react-icons/bi'
+import { BiTrashAlt } from 'react-icons/bi'
 
-const SectionTwo = ({ transAction }) => {
+const SectionTwo = ({ transAction , deleteHandler }) => {
   const [searchItem, setSearchItem] = useState('')
   const [filterTransActions, setFilterTransAction] = useState(transAction)
 
   const searchHandler = (e) => {
     const filteredItems = transAction.filter((t) =>
-      t.desc.toLowerCase().includes(e.toLowerCase()))
+      t.desc.toLowerCase().includes(e.toLowerCase()),
+    )
     setFilterTransAction(filteredItems)
   }
   useEffect(() => {
@@ -38,12 +39,17 @@ const SectionTwo = ({ transAction }) => {
                       item.type === 'expense' ? 'item-expense' : 'item-income'
                     }`}
                     key={item.id}
-                  ><div className='item-desc'>
-                    <div>{item.desc}</div>
-                    <div> {item.amount} $</div>
-                  </div>
-                    
-                    <span className='trash-icon'> <BiTrashAlt className='icon' /></span>
+                  >
+                    <div className="item-desc">
+                      <div>{item.desc}</div>
+                      <div> {item.amount} $</div>
+                    </div>
+                    <span
+                      className="trash-icon"
+                      onClick={() => deleteHandler(item.id)}
+                    >
+                      <BiTrashAlt className="icon" />
+                    </span>
                   </div>
                 )
               })}

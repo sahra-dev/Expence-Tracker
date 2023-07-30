@@ -21,10 +21,12 @@ html {
   font-family: 'Baloo';
   overflow-x: hidden;
 }
+body{
+    background-color: var(--bg-color);
+}
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -128,7 +130,7 @@ section,
   justify-content: flex-start;
 }
 .section2 h4{
-  margin-top: 3rem;
+  margin: 3rem;
 }
 .section2-title {
   width: 100%;
@@ -285,7 +287,6 @@ input[type='radio']::before {
 input[type='radio']:checked::before {
   transform: scale(1);
 }
-
 @media screen and (max-width : 450px) {
   .app{
     font-size: 1.3rem;
