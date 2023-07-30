@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 import './app.css'
-import Header from "./Components/Header/Header";
-import SectionOne from "./Components/Body/sectionOne/Section1";
+import Header from './Components/Header/Header'
+import SectionOne from './Components/Body/sectionOne/Section1'
 
-const App = () =>{
-    return( 
+const App = () => {
+  return (
     <div className="app">
-        <Header/>
-        <SectionOne/>
+      <Header />
+      <SectionOne />
     </div>
-     )
+  )
 }
 
 export default App

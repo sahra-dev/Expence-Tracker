@@ -1,17 +1,25 @@
 import { useEffect, useState } from 'react'
 import TransActionForm from './transActionForm/TransActionForm'
 
-const OverViewCmp = ({body , expense, income, addTransaction , transAction }) => {
+const OverViewCmp = ({
+  body,
+  expense,
+  income,
+  addTransaction,
+  transAction,
+}) => {
   const [state, setState] = useState(false)
 
   return (
-    <div className='sectionFirst'>
-      { state || body ?
+    <div className="sectionFirst">
+      {state || body ? (
         <TransActionForm addTransaction={addTransaction} setState={setState} />
-        : '' }
+      ) : (
+        ''
+      )}
       <section className="header">
         <p>Balance : {income - expense} $</p>
-        { !body ? (
+        {!body ? (
           <button
             className={`${state ? 'add-btn_cancel' : 'add-btn_add'}`}
             onClick={() => setState(!state)}

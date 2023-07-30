@@ -1,22 +1,25 @@
-import {useState } from "react"
+import { useState } from 'react'
 
-const TransActionForm = ({addTransaction , setState}) => {
-    const [formValues , setFormValue] = useState({
-        desc : '',
-        amount : 0 ,
-        type : 'expense'
-     })
-     const changeHandler =(e)=>{
-        setFormValue({...formValues ,
-           [ e.target.name ] : e.target.value
-        })
-     }
-    const submitHandler = (e)=>{
-        e.preventDefault()
-        addTransaction(formValues)
-        setState(false)
-    }
-    
+const TransActionForm = ({ addTransaction, setState }) => {
+  const [formValues, setFormValue] = useState({
+    desc: '',
+    amount: 0,
+    type: 'expense',
+  })
+  const changeHandler = (e) => {
+    setFormValue({ ...formValues, [e.target.name]: e.target.value })
+  }
+  const submitHandler = (e) => {
+    e.preventDefault()
+    addTransaction(formValues)
+    setState(false)
+    setFormValue({
+      desc: '',
+      amount: 0,
+      type: 'expense',
+    })
+  }
+
   return (
     <form className="add-tranasaction" onSubmit={submitHandler}>
       <input
@@ -42,7 +45,7 @@ const TransActionForm = ({addTransaction , setState}) => {
               name="type"
               value="expense"
               onChange={changeHandler}
-              checked={formValues.type==='expense'}
+              checked={formValues.type === 'expense'}
             />
             Expense
           </label>
@@ -57,7 +60,9 @@ const TransActionForm = ({addTransaction , setState}) => {
             Income
           </label>
         </div>
-        <button type="submit" className="add-tranaction-btn" >Add TransAction</button>
+        <button type="submit" className="add-tranaction-btn">
+          Add TransAction
+        </button>
       </span>
     </form>
   )

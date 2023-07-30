@@ -7,22 +7,21 @@
   margin: 0;
   box-sizing: border-box;
 }
-:root{
-  --bg-color : #e6e4e4;
-  --main-gray : gray ;
-  --main-white : #fff ;
-  --main-black : #000 ;
-  --main-red : red ;
-  --main-green : green ;
-
+:root {
+  --bg-color: #e6e4e4;
+  --main-gray: gray;
+  --main-white: #fff;
+  --main-black: #000;
+  --main-red: red;
+  --main-green: green;
 }
 html {
   font-size: 62.5%;
   font-family: 'Baloo';
   overflow-x: hidden;
 }
-body{
-    background-color: var(--bg-color);
+body {
+  background-color: var(--bg-color);
 }
 #root {
   width: 100vw;
@@ -30,10 +29,9 @@ body{
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
 }
 .app {
-  margin-top:2rem;
+  margin-top: 2rem;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -70,29 +68,29 @@ header {
   align-items: center;
   cursor: pointer;
 }
-.add-btn_add{
+.add-btn_add {
   border: 2px solid var(--main-green);
-  color: var(--main-green)
+  color: var(--main-green);
 }
-.add-btn_add:hover{
+.add-btn_add:hover {
   background-color: var(--main-green);
   color: var(--main-white);
   border: 2px solid var(--bg-color);
 }
-.add-btn_cancel{
+.add-btn_cancel {
   border: 2px solid var(--main-red);
-  color: var(--main-red)
+  color: var(--main-red);
 }
-.add-btn_cancel:hover{
+.add-btn_cancel:hover {
   background-color: var(--main-red);
   color: var(--main-white);
   border: 2px solid var(--bg-color);
 }
-.add-tranaction-btn{
+.add-tranaction-btn {
   border: 2px solid var(--main-green);
   color: var(--main-green);
 }
-.add-tranaction-btn:hover{
+.add-tranaction-btn:hover {
   border: 2px solid var(--bg-color);
   background-color: var(--main-green);
   color: var(--main-white);
@@ -129,7 +127,7 @@ section,
   margin-top: 2rem;
   justify-content: flex-start;
 }
-.section2 h4{
+.section2 h4 {
   margin: 3rem;
 }
 .section2-title {
@@ -150,7 +148,7 @@ section,
 }
 .lists {
   width: 100%;
-  height:35rem;
+  height: 35rem;
   margin-top: 2rem;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -171,27 +169,27 @@ section,
   justify-content: space-between;
   align-items: center;
 }
-.item .item-desc{
+.item .item-desc {
   width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.item-income{
+.item-income {
   display: flex;
   border-right: 4px solid var(--main-green);
 }
-.item-expense{
+.item-expense {
   display: flex;
   border-right: 4px solid var(--main-red);
 }
-.trash-icon{
+.trash-icon {
   font-size: 2.2rem;
   transform: translateY(0.3rem);
   color: var(--main-gray);
   cursor: pointer;
 }
-.trash-icon:hover{
+.trash-icon:hover {
   color: var(--main-red);
 }
 .add-tranasaction {
@@ -224,22 +222,22 @@ section,
   justify-content: space-between;
   align-items: center;
 }
-.bodyWith900Up{
+.bodyWith900Up {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
-.bodyWith900Down{
+.bodyWith900Down {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.sectionFirst{
+.sectionFirst {
   display: flex;
   flex-direction: column;
 }
 /* input radio */
-.check-boxes{
+.check-boxes {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,10 +260,10 @@ input[type='radio'] {
   justify-content: center;
   align-items: center;
 }
-.form-control.red input{
+.form-control.red input {
   border: 0.15em solid var(--main-red);
 }
-.form-control.green input{
+.form-control.green input {
   border: 0.15em solid var(--main-green);
 }
 input[type='radio']::before {
@@ -276,37 +274,37 @@ input[type='radio']::before {
   transform: scale(0);
   transition: 0.5s transform ease-in-out;
 }
-.form-control.red input::before{
+.form-control.red input::before {
   box-shadow: inset 1em 1em var(--main-red);
   background-color: var(--main-red);
 }
-.form-control.green input::before{
-  background-color:  var(--main-green);
+.form-control.green input::before {
+  background-color: var(--main-green);
   box-shadow: inset 1em 1em var(--main-green);
 }
 input[type='radio']:checked::before {
   transform: scale(1);
 }
-@media screen and (max-width : 450px) {
-  .app{
+@media screen and (max-width: 450px) {
+  .app {
     font-size: 1.3rem;
   }
   h2 {
     font-size: 1.7rem;
   }
   section,
-.section2 {
-  width: 30rem;
-}
+  .section2 {
+    width: 30rem;
+  }
   .expense,
-.income {
-  width: 12rem;
-  height: 6rem;
-}
-.add-tranasaction input[type='radio'] {
-  margin-right: 0.5rem;
-}
-.section2-title {
-  font-size: 1.5rem;
-}
+  .income {
+    width: 12rem;
+    height: 6rem;
+  }
+  .add-tranasaction input[type='radio'] {
+    margin-right: 0.5rem;
+  }
+  .section2-title {
+    font-size: 1.5rem;
+  }
 }

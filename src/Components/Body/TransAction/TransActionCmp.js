@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BiTrashAlt } from 'react-icons/bi'
 
-const SectionTwo = ({ transAction , deleteHandler }) => {
+const SectionTwo = ({ transAction, deleteHandler }) => {
   const [searchItem, setSearchItem] = useState('')
   const [filterTransActions, setFilterTransAction] = useState(transAction)
 
@@ -14,7 +14,6 @@ const SectionTwo = ({ transAction , deleteHandler }) => {
   useEffect(() => {
     searchHandler(searchItem)
   }, [transAction])
-
   return (
     <div className="section2">
       <p className="section2-title">TransActions</p>
